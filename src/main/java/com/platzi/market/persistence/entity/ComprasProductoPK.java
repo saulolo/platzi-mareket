@@ -9,11 +9,10 @@ import java.io.Serializable;
 @Embeddable
 public class ComprasProductoPK  implements Serializable {
 
-    @Id
+
     @Column(name = "id_compra")
     private Integer idCompra;
 
-    @Id
     @Column(name = "id_producto")
     private Integer idProducto;
 
