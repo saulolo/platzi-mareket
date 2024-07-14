@@ -42,19 +42,6 @@ public class Producto {
     private Categoria categoria;
 
 
-    public Producto() {
-    }
-
-    public Producto(String nombre, Integer idCategoria, String codigoBarras, Double precioVenta, Integer cantidadStock,
-                    Boolean estado) {
-        this.nombre = nombre;
-        this.idCategoria = idCategoria;
-        this.codigoBarras = codigoBarras;
-        this.precioVenta = precioVenta;
-        this.cantidadStock = cantidadStock;
-        this.estado = estado;
-    }
-
     public Integer getIdProducto() {
         return idProducto;
     }

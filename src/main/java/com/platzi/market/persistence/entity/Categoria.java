@@ -30,15 +30,6 @@ public class Categoria {
     private List<Producto> productos;
 
 
-    public Categoria() {
-    }
-
-    public Categoria(String descripcion, Boolean estado, List<Producto> productos) {
-        this.descripcion = descripcion;
-        this.estado = estado;
-        this.productos = productos;
-    }
-
     public Integer getIdCategoria() {
         return idCategoria;
     }

@@ -27,8 +27,13 @@ public class ProductoRepository implements ProductRepository {
      */
     @Override
     public List<Product> getAll() {
-        Iterable<Producto> productos =  productoCrudRepository.findAll();
-        return Collections.singletonList(mapper.toProduct((Producto) productos));
+        List<Producto> productos = (List<Producto>) productoCrudRepository.findAll();
+        return mapper.toProducts(productos);
+    }
+
+    @Override
+    public Optional<Product> getProductById(Integer productId) {
+        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
     }
 
     @Override
@@ -42,17 +47,6 @@ public class ProductoRepository implements ProductRepository {
         Optional<List<Producto>> productos = productoCrudRepository.findByCantidadStockLessThanAndEstado(quantity, true);
         return productos.map(prods -> mapper.toProducts(prods));
     }
-
-    @Override
-    public Optional<Product> getProductById(Integer productId) {
-        return productoCrudRepository.findById(productId).map(producto -> (Product) mapper.toProduct(producto));
-    }
-
-    @Override
-    public Optional<Producto> saveProducto(Producto producto) {
-        return Optional.empty();
-    }
-
 
     public Optional<Product> saveProducto(Product product) {
         Producto producto = mapper.toProducto(product);
