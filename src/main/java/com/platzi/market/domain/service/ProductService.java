@@ -2,7 +2,6 @@ package com.platzi.market.domain.service;
 
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.repository.ProductRepository;
-import com.platzi.market.persistence.entity.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

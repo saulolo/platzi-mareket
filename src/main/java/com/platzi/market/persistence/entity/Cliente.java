@@ -22,7 +22,7 @@ public class Cliente {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "apellido")
+    @Column(name = "apellidos")
     private String apellido;
 
     @Column(name = "celular")
@@ -35,7 +35,6 @@ public class Cliente {
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
-    @Column(name = "compras")
     private List<Compra> compras;
 
 
