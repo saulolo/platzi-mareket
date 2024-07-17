@@ -3,6 +3,7 @@
 _Saul Echeverri_   
 _Edición: 2024_
 
+![Portada del Proyecto](https://github.com/saulolo/platzi-market/blob/main/src/main/resources/static/PlatziMarket.webp)
 
 ## Descripción 📄
 Platzi Market es una API RESTful para la gestión de un mercado virtual. Este proyecto fue desarrollado utilizando Java, Spring Boot y PostgreSQL.
