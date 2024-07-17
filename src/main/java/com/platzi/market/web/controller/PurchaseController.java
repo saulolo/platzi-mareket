@@ -1,7 +1,7 @@
 package com.platzi.market.web.controller;
 
 import com.platzi.market.domain.Purchase;
-import com.platzi.market.domain.service.service.PurchaseService;
+import com.platzi.market.domain.service.PurchaseService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
