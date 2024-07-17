@@ -2,6 +2,7 @@ package com.platzi.market.web.controller;
 
 import com.platzi.market.domain.Purchase;
 import com.platzi.market.domain.service.service.PurchaseService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +26,14 @@ public class PurchaseController {
 
 
     @GetMapping("/all")
+    @Operation(summary = "Obtiene todas las compras", description = "Recuperar todas las compras en el sistema")
     @ResponseStatus(HttpStatus.OK)
     public List<Purchase> getAll() {
         return purchaseService.getAll();
     }
 
     @GetMapping("/{purchaseId}")
+    @Operation(summary = "Obtiene las compras por Id.", description = "Recuperar las compras por Id.")
     public ResponseEntity<List<Purchase>> getPurchaseById(@PathVariable String purchaseId) {
         return purchaseService.getByCliente(purchaseId)
                 .map(purchases -> new ResponseEntity<>(purchases, HttpStatus.OK))
@@ -39,11 +42,13 @@ public class PurchaseController {
 
 
     @PostMapping("/save")
+    @Operation(summary = "Crea las compras", description = "Crea las compras en el sistema.")
     public ResponseEntity<Purchase> savePurchase(@RequestBody Purchase purchase) {
         return new ResponseEntity<>(purchaseService.save(purchase), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/eliminar/{purchaseId}")
+    @Operation(summary = "Elimina las compras por Id", description = "Elimina las compras por Id en el sistema.")
     public ResponseEntity deletePurchaseId(@PathVariable String purchaseId) {
         if (purchaseService.delete(purchaseId)) {
             return new ResponseEntity<>(HttpStatus.OK) ;
